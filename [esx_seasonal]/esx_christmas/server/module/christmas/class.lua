@@ -24,29 +24,18 @@
 ---@class ChristmasEvent
 ---@field private _state ChristmasEventState
 ---@field private _ac ChristmasAnticheatState
-local ChristmasEvent = {}
-ChristmasEvent.__index = ChristmasEvent
-
----@return ChristmasEvent
-function ChristmasEvent:new()
-  ---@type ChristmasEvent
-  local instance = setmetatable({}, self)
-
-  ---@type ChristmasEventState
-  instance._state = {
+local ChristmasEvent = {
+  _state = {
     locations = {},
     globalClaimCount = 0,
     perPlayerClaims = {}
-  }
-
-  instance._ac = {
+  },
+  _ac = {
     lastClaimTime = {},
     lastSyncTime = {},
     violationCount = {}
   }
-
-  return instance
-end
+}
 
 ---@private
 ---@param message string

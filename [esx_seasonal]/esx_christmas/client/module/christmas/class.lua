@@ -26,16 +26,11 @@
 
 ---@class ChristmasClientManager
 ---@field private _locations table<integer, ChristmasClientLocation>
-local ChristmasClientManager = {}
-ChristmasClientManager.__index = ChristmasClientManager
+local ChristmasClientManager = {
+  _locations = {}
+}
 
----@return ChristmasClientManager
-function ChristmasClientManager:new()
-  ---@type ChristmasClientManager
-  local instance = setmetatable({}, self)
-  instance._locations = {}
-  return instance
-end
+ChristmasClientManager.__index = ChristmasClientManager
 
 ---@private
 ---@param message string

@@ -1,7 +1,4 @@
-local ChristmasClientManager = require("client.module.christmas.class")
-
----@type ChristmasClientManager
-local Manager = ChristmasClientManager:new()
+local Manager = require("client.module.christmas.class")
 
 CreateThread(function()
   while not ESX or not ESX.IsPlayerLoaded() do
