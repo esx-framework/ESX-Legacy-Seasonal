@@ -43,6 +43,7 @@
 ---@field MaxViolations integer
 ---@field KickOnMaxViolations boolean
 ---@field MaxClaimDistance number
+---@field Locale string
 ---@field Locations ChristmasLocation[]
 ---@field Props ChristmasPropsConfig
 ---@field Tiers ChristmasTier[]
@@ -78,6 +79,8 @@ Config.MinClaimInterval = 2
 Config.MaxViolations = 5
 Config.KickOnMaxViolations = true
 Config.MaxClaimDistance = 5.0
+
+Config.Locale = GetConvar("esx:locale", "en")
 
 Config.Locations = {
   {
