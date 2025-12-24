@@ -1,5 +1,5 @@
 return {
-  ['xmas_open_present_help'] = 'Press ~INPUT_CONTEXT~ to open the present',
+  ['xmas_open_present_help'] = 'Press E to open the present',
 
   ['xmas_present_already_opened'] = 'This present has already been opened.',
   ['xmas_all_presents_claimed'] = 'All presents for this event have already been claimed.',

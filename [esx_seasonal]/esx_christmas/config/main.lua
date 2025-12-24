@@ -85,8 +85,8 @@ Config.Locale = GetConvar("esx:locale", "en")
 Config.Locations = {
   {
     Name = "Legion Square",
-    LandmarkCoords = vec3(203.525284, -941.169250, 29.678345),
-    LandmarkModel = nil,
+    LandmarkCoords = vec3(203.525284, -941.169250, 29.55),
+    LandmarkModel = "sp_medium_christmas_santa",
     PresentCoords = {
       vec3(199.437363, -935.485718, 29.678345),
       vec3(199.318680, -953.432983, 29.088623),
@@ -107,7 +107,6 @@ Config.Props = {
     "sp_snow_gifts",
     "sp_snow_candy",
     "sp_christmas_star",
-    "sp_light_tree_1"
   },
   HintModels = {
     "sp_christmas_snowman",

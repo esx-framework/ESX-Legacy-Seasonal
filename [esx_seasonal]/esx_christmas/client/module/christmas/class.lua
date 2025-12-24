@@ -142,14 +142,11 @@ function ChristmasClientManager:SpawnLocation(locationData)
 
       ESX.Point:new({
         coords = hintCoords,
-        distance = 10.0,
+        distance = 5.0,
         enter = function() end,
         leave = function() end,
         inside = function(pointInstance)
-          local distance = pointInstance.currDistance or 0.0
-          if distance <= 5.0 then
-            ESX.ShowFloatingHelpNotification(TranslateCap(location.hintTextKey), hintCoords)
-          end
+          ESX.ShowFloatingHelpNotification(TranslateCap(location.hintTextKey), hintCoords)
         end
       })
     end
@@ -164,7 +161,7 @@ function ChristmasClientManager:SpawnLocation(locationData)
 
     if modelHash ~= 0 then
       ESX.Streaming.RequestModel(modelHash)
-      
+
       entity = CreateObject(modelHash, coords.x, coords.y, coords.z, false, false, false)
       FreezeEntityPosition(entity, true)
       SetModelAsNoLongerNeeded(modelHash)
@@ -183,25 +180,21 @@ function ChristmasClientManager:SpawnLocation(locationData)
     ---@type EsxPoint
     local point = ESX.Point:new({
       coords = coords,
-      distance = 5.0,
-      enter = function() end,
-      leave = function()
-        ESX.ShowHelpNotification(" ", false, false, 1)
+      distance = 2.0,
+      enter = function()
+        ESX.TextUI(TranslateCap('xmas_open_present_help'))
       end,
-      inside = function(pointInstance)
-        local distance = pointInstance.currDistance or 0.0
-
+      leave = function()
+        ESX.HideUI()
+      end,
+      inside = function()
         if presentState.claimed or not presentState.canClaim then
           return
         end
 
-        if distance <= 2.0 then
-          ESX.ShowHelpNotification(TranslateCap('xmas_open_present_help'), true, false, 0)
-
-          if IsControlJustReleased(0, 38) then
-            presentState.canClaim = false
-            TriggerServerEvent("esx_christmas:server:claim", id, presentState.index)
-          end
+        if IsControlJustReleased(0, 38) then
+          presentState.canClaim = false
+          TriggerServerEvent("esx_christmas:server:claim", id, presentState.index)
         end
       end
     })
