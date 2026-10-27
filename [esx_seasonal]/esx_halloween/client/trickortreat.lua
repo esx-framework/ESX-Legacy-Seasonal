@@ -169,11 +169,7 @@ local function spawnPumpkin(id, state)
         end
 
         SetEntityAsMissionEntity(object, true, true)
-        -- Cast down from the configured point, including porches and raised surfaces.
-        -- Probing from above the entrance can select its roof instead of the doorstep.
-        if not PlaceObjectOnGroundOrObjectProperly(object) then
-            failSpawn(id, 'ground placement failed; object kept at configured coordinates')
-        end
+
         local modelYawOffset = 90.0
         local yaw = (house.heading - modelYawOffset) % 360.0
         SetEntityRotation(object, 0.0, 0.0, yaw, 1, true)
@@ -246,7 +242,7 @@ local function sync(data)
             local coords = settings.houses[id].coords
             local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
 
-            SetBlipAsShortRange(blip, false)
+            SetBlipAsShortRange(blip, true)
             SetBlipSprite(blip, settings.blips.sprite)
             SetBlipColour(blip, settings.blips.activeColor)
             SetBlipScale(blip, settings.blips.scale)
