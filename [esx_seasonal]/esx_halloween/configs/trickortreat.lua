@@ -82,7 +82,7 @@ TrickOrTreatConfig = {
     ---These are real Los Santos residential locations from across the map
     houses = {
         { coords = vec3(-178.37246704102,502.0654296875,135.8270111084),   heading = 270.0 }, 
-        { coords = vec3(-687.14166259766,595.67144775391,142.64710998535), heading = 315.0 },
+        { coords = vec3(-538.12957763672,818.67211914062,196.5103302002),  heading = 270.0 },
         { coords = vec3(-888.4541015625,700.06134033203,149.69592285156),  heading = 270.0 }, 
         { coords = vec3(-910.33557128906,693.93438720703,150.4351348877),  heading = 270.0 },
         { coords = vec3(-1292.7266845703,454.37738037109,96.672241210938), heading = 270.0 }, 
